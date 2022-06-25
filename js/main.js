@@ -26,7 +26,7 @@ function showTime() {
 
 // OUTPUT TIME
     time.innerHTML = `${hour}<span>:</span>${addZero(min)}<span>:</span>${addZero(sec)} ${showAmPm ? amPm : ''}`;
-
+    
     setTimeout(showTime, 1000);
     }
 
@@ -67,7 +67,7 @@ function showTime() {
 //GET NAME FUNCTION
     function getName(){
         if(localStorage.getItem('name') === null){
-            name.textContent = '[Enter name here]';
+            name.textContent = '';
 
         } else {
             name.textContent = localStorage.getItem('name');
@@ -119,6 +119,9 @@ function showTime() {
     //SET FOCUS
     focus.addEventListener('keypress', setFocus);
     focus.addEventListener('blur', setFocus);
+
+    //remove text on click
+    name.addEventListener('click', setName);
 
 //RUN
 showTime();
