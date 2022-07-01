@@ -67,7 +67,7 @@ function showTime() {
 //GET NAME FUNCTION
     function getName(){
         if(localStorage.getItem('name') === null){
-            name.textContent = '';
+            name.textContent = '[enter your name here]';
 
         } else {
             name.textContent = localStorage.getItem('name');
